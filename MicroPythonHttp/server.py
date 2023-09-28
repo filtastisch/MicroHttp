@@ -28,14 +28,15 @@ class Server:
 
     def __init__(self, port=8080):
         self.port = port
+        self.started = False
 
     def start(self):
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server_socket.bind(("", self.port))
         server_socket.listen(5)
-        print("Server running on port 8080...")
+        self.started = True
 
-        while True:
+        while self.started:
             client_socket, addr = server_socket.accept()
             handle_request(client_socket)
 
@@ -43,5 +44,6 @@ class Server:
         try:
             start()
         except KeyboardInterrupt:
+            started = False
             print("\nServer shutting down.")
             sys.exit(0)

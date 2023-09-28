@@ -14,7 +14,7 @@ def handle_request(client_socket):
     try:
         with open(os.getcwd() + filename, "rb") as f:
             content = f.read()
-            response = "HTTP/1.1 200 OK\n\n".encode() + content
+            response = "HTTP/1.1 200 OK\n".encode() + content
     except FileNotFoundError:
         with open(os.path.dirname(os.path.abspath(__file__)) + "/404.html", "rb") as f:
             content = f.read()

@@ -1,3 +1,3 @@
-# MicroHttp
+# MicroPythonHttp
 
-[MicroHttp](https://github.com/filtastisch/MicroHttp) is a simple HTTP server for MicroPython projects.
+[MicroPythonHttp](https://github.com/filtastisch/MicroPythonHttp) is a simple HTTP server for MicroPython projects.
